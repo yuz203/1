@@ -811,47 +811,47 @@
         // 创建气球
         function createBalloons(count = 15) {
             const colors = ['#ff9e9e', '#ffd0c4', '#ffb8b8', '#ff9a9e', '#fad0c4'];
-            Const 身体=文件.身体;
+            const body = document.body;
             
-            为 (让 我=0; 我 < count; 我++) {
-                Const 气球=文件.createElement('div');
-                气球.classList.添加('气球');
+            for (let i = 0; i < count; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
                 
                 // 随机大小
-                const 大小=数学.随机() * 60 + 30;
-                气球.style.宽度=`${大小}px';
-                气球.style.高度 = `${大小}px';
+                const size = Math.random() * 60 + 30;
+                balloon.style.width = `${size}px`;
+                balloon.style.height = `${size}px`;
                 
                 // 随机位置
-                气球.style.左 = `${数学.随机() * 100}%`;
-                balloon.style.顶端 = `${100 + 数学.随机() * 20}%`;
+                balloon.style.left = `${Math.random() * 100}%`;
+                balloon.style.top = `${100 + Math.random() * 20}%`;
                 
                 // 随机颜色
-                balloon.style.backgroundColor = 颜色[数学.地板(数学.随机() * 颜色.长度)];
+                balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 
                 // 随机动画延迟和时长
-                const 延期 = Math.随机() * 5;
-                const 持续 = Math.random() * 10 + 10;
-                balloon.style.动画 = '浮点${持续}s轻松进出${延期}s转发';
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                balloon.style.animation = `float ${duration}s ease-in-out ${delay}s forwards`;
                 
-                身体.appendChild(balloon);
+                body.appendChild(balloon);
                 
                 // 移除气球
-                setTimeout(()=>{
-                    balloon.移除();
-                }, (持续 + 延期) * 1000);
+                setTimeout(() => {
+                    balloon.remove();
+                }, (duration + delay) * 1000);
             }
         }
         
         // 主页面初始化
-        功能 initMainPage() {
+        function initMainPage() {
             createBalloons();
             
             // 显示音乐提示
-            const 音乐提示 = 文件.getElementById('音乐提示');
-            音乐提示.style.display = '块';
-            setTimeout(()=>{
-                musicTip.style.display = '无';
+            const musicTip = document.getElementById('musicTip');
+            musicTip.style.display = 'block';
+            setTimeout(() => {
+                musicTip.style.display = 'none';
             }, 5000);
             
             // 尝试自动播放音乐
@@ -874,73 +874,73 @@
         // 检查音乐是否可播放
         function checkMusicPlayable() {
             return new Promise((resolve) => {
-                bgMusic.addEventListener('canplaythrough', () => resolve(true), { once: true });
-                bgMusic.addEventListener('error', () => resolve(false), { once: true });
+bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐.addEventListener('canplaythrough'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：true})；addEventListener('canplaythrough'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：true})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；
+bg音乐bg音乐.addEventListener('错误'，()=>解决(假的)，{一次:正确})；addEventListener('错误'，()=>解决(假的)，{一次:正确})；
                 
 // 设置超时检查// 设置超时检查
-setTimeout(()setTimeout(()setTimeout(()setTimeout(()setTimeout(()setTimeout(()setTimeout(()setTimeout()=>{setTimeout()=>{{setTimeout()=>{{setTimeout()=>{{setTimeout(())=>{{setTimeout(()=>{(()setTimeout(()=>{setTimeout()=>{{setTimeout()=>{{setTimeout(()=>{{setTimeout(()=>{(()setTimeout(()setTimeout(()setTimeout()=>{setTimeout()=>{{setTimeout()=>{{setTimeout()=>{{setTimeout(())=>{{setTimeout(()=>{(()setTimeout(()=>{setTimeout()=>{{setTimeout()=>{{setTimeout(()=>{{setTimeout(()=>{
-解决(bg音乐解决(bg音乐解决(bg音乐解决(bg音乐解决(bg音乐解决(bg音乐解决(bg音乐解决(bg音乐.readyStatereadyStatereadyStatereadyState>=HTMLMediaElement.解决(bg音乐.readyState>=HTMLMediaElement.解决(bg音乐)；readyState>=HTMLMediaElement.readyState>=HTMLMediaElement。have_FUTURE_DATA)；have_FUTURE_DATA)解决(bg音乐。readyState>=HTMLMediaElement.Have_FUTURE_DATA)readyStatereadyState>=HTMLMediaElement.readyState>=HTMLMediaElement.Have_FUTURE_DATA)；readyState>=HTMLMediaElement。解决(bg音乐.readyState>=HTMLMediaElement.Have_FUTURE_DATA)；have_FUTURE_DATA)解决(bg音乐.readyState>=HTMLMediaElement。解决(bg音乐.readyState>=HTMLMediaElementReadyState。解决(bg音乐)；readyState>=HTMLMediaElement.readyState>=HTMLMediaElement.have_FUTURE_DATA)；have_FUTURE_DATA)解决(bg音乐。readyState>=HTMLMediaElement>=HTMLMediaElement.解决(bg音乐.readyState>=HTMLMediaElement.have_FUTURE_DATA)；readyState>=HTMLMediaElement.解决(bg音乐.readyState>=HTMLMediaElement.have_FUTURE_DATA)；have_FUTURE_DATA)解决(bg音乐.readyState>=HTMLMediaElement.Have_FUTURE_DATA)readyStatereadyState>=解决(bg音乐.readyState>=HTMLMediaElementreadyState。解决(bg音乐)；readyState>=HTMLMediaElement.readyState>=HTMLMediaElement。have_FUTURE_DATA)；have_FUTURE_DATA)解决(bg音乐。readyState>=HTMLMediaElement.Have_FUTURE_DATA)；解决(bg音乐.readyState>=HTMLMediaElement.解决(bg音乐)；readyState>=HTMLMediaElement.readyState>=HTMLMediaElement。have_FUTURE_DATA)；have_FUTURE_DATA)解决(bg音乐。readyState>=HTMLMediaElement.Have_FUTURE_DATA)；HTMLMediaElement。解决(bg音乐.readyState>=HTMLMediaElement；HTMLMediaElement.解决
+setTimeout(()setTimeout(()=>{{
+解决(bg音乐解决(bg音乐解决(bg音乐解决(bgMusic.readyState>=HTMLMediaElement.have_FUTURE_DATA)；readyState>=HTMLMediaElement.have_FUTURE_DATA)解决(bg音乐.readyState>=HTMLMediaElement。解决(bg音乐.readyState>=HTMLMediaElement.Have_FUTURE_DATA)；
 }}}}，3000);3000);3000);3000);
             });
         }
         
 // 尝试播放音乐
-异步功能tryPlayMusic(){异步功能tryPlayMusic()异步功能tryPlayMusic(){异步功能tryPlayMusic(){{
-音乐加载。风格音乐加载。风格.显示='块'；音乐加载。风格.显示='块'；显示='块'；音乐加载。风格.显示='块'；
+异步功能tryPlayMusic()tryPlayMusic(){{
+音乐加载。 风格音乐加载。 风格.显示='块'；音乐加载。风格.显示='块'；显示='块'；音乐加载。风格.显示='块'；
             
 尝试{尝试{
-ConstcanplayConstcanplay=等候checkMusicPlayable()；Constcanplay=等候checkMusicPlayable()；等候checkMusicPlayable()；Constcanplay=等候checkMusicPlayable()；
+Constcanplay=等候checkMusicPlayable()；
                 
-如果(可以播放){如果如果(可以播放){如果(canplay){(canplay){
-ConstplayPromiseConstplayPromise=bg音乐.玩()；ConstplayPromise=bg音乐.玩()；bg音乐.玩()；ConstplayPromise=bg音乐.玩()；
+如果(canplay){
+ConstplayPromise=bg音乐.玩()；
                     
-如果(playPromise！如果(playPromise！==未定义){如果(playPromise！==未定义){未定义){如果(playPromise！==未定义){
-等候playPromise；等候playPromise等候playPromise；等候playPromise；
-音乐演奏音乐演奏=正确;音乐演奏=正确;正确;音乐演奏=正确;
-MusicControlMusicControl.innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；
+如果(playPromise！==未定义){
+等候playPromise；
+音乐演奏=正确;
+MusicControlMusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；
                     }
-}} 其他{} 其他{其他{} 其他{
-控制台控制台.日志('音乐加载失败，使用备用方案');控制台.日志('音乐加载失败，使用备用方案');日志('音乐加载失败，使用备用方案');控制台.日志('音乐加载失败，使用备用方案');
+}} 其他{其他{
+控制台控制台.日志('音乐加载失败，使用备用方案');日志('音乐加载失败，使用备用方案');
                 }
-} 赶上 (误差) {} 赶上 (误差) {
-控制台控制台.日志('自动播放被阻止:', 误差);控制台.日志('自动播放被阻止:', 误差);日志('自动播放被阻止:', 误差);控制台.日志('自动播放被阻止:', 误差);
-Const音乐提示Const音乐提示Const音乐提示Const音乐提示=文件.getElementById('音乐提示')；常数音乐提示=文件.getElementById('音乐提示')；文件.getElementById('音乐提示')；Const音乐提示=文件.getElementById('音乐提示')；文件.getElementById('音乐提示')；常数音乐提示=文件.getElementById('音乐提示')；文件.getElementById('音乐提示')；常数音乐提示=文件.getElementById('音乐提示')；
-音乐提示音乐提示.风格.显示='块';音乐提示.风格.显示='块';风格.显示='块';音乐提示.风格.显示='块';
-setTimeout(()=>{setTimeout(()=>{
-音乐提示音乐提示.风格.显示='无';音乐提示.风格.显示='无';风格.显示='无';音乐提示.风格.显示='无';
-}}}}，5000);5000);5000);5000);
-}} 最后{} 最后{最后{} 最后{
-音乐加载。风格音乐加载。风格音乐加载。风格音乐加载。 风格.显示='无'；音乐加载。风格.显示音乐加载。 风格音乐加载。 风格音乐加载。 风格音乐加载。 风格.显示='无'；音乐加载。风格.显示='无'；显示='无'；音乐加载。 风格.显示='无'；显示='无'；音乐加载。 风格.显示='无'；显示='无'；音乐加载。 风格.显示='无'；'无'；显示='无'；音乐加载。风格.显示='无'；显示='无'；音乐加载。风格.显示='无'；显示='无'；音乐加载。风格.显示='无'；
+}} 赶上 (误差) {赶上 (误差) {
+控制台控制台.日志('自动播放被阻止:', 误差);日志('自动播放被阻止:', 误差);
+Const音乐提示=文件.getElementById('音乐提示')；
+音乐提示音乐提示.风格.显示='块';风格.显示='块';
+setTimeout(()=>{
+音乐提示音乐提示.风格.显示='无';风格.显示='无';
+}}, 5000);5000);
+}} 最后{最后{
+音乐加载。风格音乐加载。风格.显示='无'；显示='无'；
             }
         }
         
 // 音乐控制点击事件
-MusicControlMusicControlMusicControlMusicControl.addEventListener('单击'，异步()=>{MusicControl.addEventListener('单击'，异步()=>{addEventListener('单击'，异步()=>{MusicControl.addEventListener('单击'，异步()=>{addEventListener('单击'，异步()=>{MusicControl.addEventListener('单击'，异步()=>{addEventListener('单击'，异步()=>{MusicControl.addEventListener('单击'，异步()=>{
-如果如果 (音乐演奏) {如果 (音乐演奏) {(音乐演奏) {如果 (音乐演奏) {
-bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐.暂停()；bg音乐.暂停()；暂停()；bg音乐.暂停()；暂停()；bg音乐.暂停()；暂停()；bg音乐.暂停()；
-MusicControlMusicControlMusicControlMusicControl.innerHTML='<i class="fas fa-music"></i>'；MusicControl.innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；MusicControl.innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；MusicControl.innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；MusicControl.innerHTML='<i class="fas fa-music"></i>'；
-}} 其他{} 其他{其他{} 其他{
-尝试{尝试{
-等候bg音乐等候bg音乐等候bg音乐等候bg音乐等候bg音乐.玩()；等候bg音乐.玩()；玩()；等候bg音乐.玩()；玩()；等候bg音乐.玩()；玩()；等候bg音乐.玩()；
-MusicControlMusicControlMusicControlMusicControl.innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；inner超文本标记语言='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i class="fas fa-pause"></i>'；.innerHTML='<i班级="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i班级="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；MusicControl.innerHTML='<i班级="fas fa-pause"></i>'；
-}}}} 赶上 (误差) {} 赶上 (误差) {赶上 (误差) {} 赶上 (误差) {赶上 (误差) {} 赶上 (误差) {赶上 (误差) {} 赶上 (误差) {
-控制台控制台控制台控制台控制台控制台控制台控制台控制台控制台控制台控制台控制台控制台控制台控制台.日志('播放失败:', 误差);控制台.日志('播放失败:', 误差) ; 日志('播放失败:', 误差) ;控制台.日志('播放失败:', 误差) ;日志('播放失败:', 误差);控制台.日志('播放失败:', 误差); 日志('播放失败:', 误差);控制台.日志('播放失败:', 误差);日志('播放失败:'日志('播放失败:', 误差);控制台.日志('播放失败:', 误差) ; 日志('播放失败:', 误差);控制台.日志('播放失败:', 误差) ;日志('播放失败:', 误差);控制台.日志('播放失败:', 误差); 日志('播放失败:', 误差);控制台.日志('播放失败:', 误差);日志('播放失败:', 误差);控制台.日志('播放失败:', 误差); 日志('播放失败:', 误差);控制台.日志('播放失败:', 误差) ;日志('播放失败:', 误差);控制台.日志('播放失败:', 误差); 日志('播放失败:', 误差);控制台.日志('播放失败:', 误差);
-警惕的('音乐播放失败，请检查网络连接或刷新页面重试')警惕的('音乐播放失败，请检查网络连接或刷新页面重试')警惕的('音乐播放失败， 请检查网络连接或刷新页面重试')警惕的('音乐播放失败，请检查网络连接或刷新页面重试'); 警惕的('音乐播放失败，请检查网络连接或刷新页面重试') ;警惕的('音乐播放失败，请检查网络连接或刷新页面重试');警惕的('音乐播放失败，请检查网络连接或刷新页面重试') ; 警惕的('音乐播放失败，请检查网络连接或刷新页面重试');
-返回返回返回返回;返回;返回;返回;返回;
+MusicControlMusicControl.addEventListener('单击'，异步()=>{addEventListener('单击'，异步()=>{
+如果如果 (音乐演奏) {(音乐演奏) {
+bg音乐bg音乐.暂停()；暂停()；
+MusicControlMusicControlMusicControlMusicControl.innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；
+}其他{
+尝试{
+等候bg音乐等候bg音乐等候bg音乐等候bg音乐.玩()；玩()；玩()；玩()；
+MusicControlMusicControlMusicControlMusicControlMusicControlMusicControlMusicControlMusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；
+}赶上(错误){
+控制台控制台控制台控制台控制台控制台控制台控制台.日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；
+警惕的('音乐播放失败，请检查网络连接或刷新页面重试')；
+返回；
                 }
             }
-音乐演奏音乐演奏音乐演奏音乐演奏音乐演奏音乐演奏音乐演奏音乐演奏= ! 音乐演奏;音乐演奏= ! 音乐演奏;音乐演奏;音乐演奏= ! 音乐演奏;音乐演奏;音乐演奏= ! 音乐演奏;音乐演奏;音乐演奏= ! 音乐演奏;音乐演奏;音乐演奏= ! 音乐演奏;音乐演奏;音乐演奏= ! 音乐演奏;音乐演奏;音乐演奏= ! 音乐演奏;音乐演奏;音乐演奏= ! 音乐演奏;
+音乐播放音乐播放音乐播放音乐播放=！ 音乐演奏；！ 音乐演奏；音乐演奏；！音乐演奏；！ 音乐演奏；！ 音乐演奏；音乐演奏；！ 音乐演奏；
         });
         
 // 预加载音效
-窗户窗户窗户窗户.onload=功能(){onload=功能(){onload=功能(){onload=功能(){
+窗户窗户窗户窗户.onload=函数(){onload=函数(){onload=函数(){onload=函数(){onload=函数(){onload=函数(){onload=函数(){onload=函数(){
 // 预加载音效
-blowSound。负载()；
-庆典声音.负载();
+blowSoundblowSoundblowSoundblowSound。负载()；载荷()；负载()；负载()；
+庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音 庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音 庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音.负载() ； 负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载() ；载荷() ； 负载()；负载()；负载()；负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载()；载荷()；负载()；负载()；负载()； 负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载()；
             
 // 创建开场气球
 createBalloons(8)；
         };
-</脚本>/脚本>
-</身体>/身体>
-</超文本标记语言>/超文本标记语言>
+    </script>
+</body>
+</html>                                
