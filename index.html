@@ -23,7 +23,6 @@
             position: relative;
         }
         
-        /* 开场动画容器 */
         .opening-container {
             position: fixed;
             top: 0;
@@ -58,7 +57,6 @@
             50% { transform: scale(1.05); }
         }
         
-        /* 开场大蛋糕 - 粉色蛋糕 */
         .opening-cake {
             width: 300px;
             height: 250px;
@@ -161,7 +159,6 @@
             50% { opacity: 1; }
         }
         
-        /* 主内容容器 */
         .container {
             width: 100%;
             max-width: 600px;
@@ -174,7 +171,7 @@
             padding: 10px;
             border: 8px solid #fff;
             animation: glow 2s infinite alternate;
-            display: none; /* 初始隐藏 */
+            display: none;
         }
         
         @keyframes glow {
@@ -413,7 +410,6 @@
             font-weight: bold;
         }
         
-        /* 音乐播放提示 */
         .music-tip {
             position: fixed;
             top: 0;
@@ -427,7 +423,6 @@
             display: none;
         }
         
-        /* 音乐加载提示 */
         .music-loading {
             position: fixed;
             top: 50%;
@@ -450,7 +445,6 @@
             margin-top: 10px;
         }
         
-        /* 烟花特效 */
         .firework {
             position: absolute;
             width: 5px;
@@ -526,7 +520,6 @@
     </style>
 </head>
 <body>
-    <!-- 开场动画 -->
     <div class="opening-container" id="openingContainer">
         <div class="opening-content">
             <h1 class="opening-title">袁君儿生日快乐！</h1>
@@ -538,14 +531,12 @@
                 <div class="cake-decoration decoration-2"></div>
                 <div class="cake-layer cake-top-layer"></div>
                 
-                <!-- 蜡烛 -->
                 <div class="candle" style="left: 20%;"></div>
                 <div class="candle" style="left: 35%;"></div>
                 <div class="candle" style="left: 50%;"></div>
                 <div class="candle" style="left: 65%;"></div>
                 <div class="candle" style="left: 80%;"></div>
                 
-                <!-- 火焰 -->
                 <div class="flame" style="left: 20%;"></div>
                 <div class="flame" style="left: 35%;"></div>
                 <div class="flame" style="left: 50%;"></div>
@@ -574,21 +565,18 @@
             
             <div class="cake-container">
                 <div class="big-cake">
-                    <!-- 修复后的蛋糕层类名 -->
                     <div class="cake-layer cake-bottom-layer"></div>
                     <div class="cake-decoration decoration-1"></div>
                     <div class="cake-layer cake-middle-layer"></div>
                     <div class="cake-decoration decoration-2"></div>
                     <div class="cake-layer cake-top-layer"></div>
                     
-                    <!-- 蜡烛 -->
                     <div class="candle" style="left: 20%;"></div>
                     <div class="candle" style="left: 35%;"></div>
                     <div class="candle" style="left: 50%;"></div>
                     <div class="candle" style="left: 65%;"></div>
                     <div class="candle" style="left: 80%;"></div>
                     
-                    <!-- 火焰 -->
                     <div class="flame" style="left: 20%;"></div>
                     <div class="flame" style="left: 35%;"></div>
                     <div class="flame" style="left: 50%;"></div>
@@ -636,7 +624,6 @@
         </footer>
     </div>
     
-    <!-- 音频元素 -->
     <audio id="bgMusic" preload="auto">
         <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-653.mp3" type="audio/mpeg">
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
@@ -651,19 +638,15 @@
     </audio>
 
     <script>
-        // 开场动画逻辑
         const openingContainer = document.getElementById('openingContainer');
         const mainContainer = document.getElementById('mainContainer');
         const flames = document.querySelectorAll('.opening-cake .flame');
         const blowSound = document.getElementById('blowSound');
         const celebrationSound = document.getElementById('celebrationSound');
         
-        // 吹灭蜡烛
         function blowOutCandles() {
-            // 播放吹气音效
             blowSound.play().catch(e => console.log('吹气音效播放失败:', e));
             
-            // 逐个吹灭蜡烛
             flames.forEach((flame, index) => {
                 setTimeout(() => {
                     flame.style.transform = 'scale(0)';
@@ -671,14 +654,12 @@
                 }, index * 200);
             });
             
-            // 触发庆祝效果
             setTimeout(() => {
                 celebrationSound.play().catch(e => console.log('庆祝音效播放失败:', e));
                 createFireworks();
                 createBalloons(10);
                 createRibbons();
                 
-                // 进入主界面
                 setTimeout(() => {
                     openingContainer.style.opacity = '0';
                     setTimeout(() => {
@@ -690,12 +671,10 @@
             }, 1200);
         }
         
-        // 点击屏幕吹灭蜡烛
         openingContainer.addEventListener('click', () => {
             blowOutCandles();
         });
         
-        // 创建烟花效果
         function createFireworks() {
             const colors = ['#ff6b6b', '#4ecdc4', '#ffd166', '#06d6a0', '#118ab2'];
             
@@ -718,23 +697,19 @@
             
             document.body.appendChild(firework);
             
-            // 烟花上升
             setTimeout(() => {
                 firework.style.transition = 'top 0.8s ease-out';
                 firework.style.top = `${y - 150}px`;
             }, 10);
             
-            // 烟花爆炸
             setTimeout(() => {
                 firework.style.transition = 'all 0.4s ease-out';
                 firework.style.width = '0';
                 firework.style.height = '0';
                 firework.style.boxShadow = '0 0 0 rgba(255,255,255,0)';
                 
-                // 创建爆炸粒子
                 createExplosionParticles(x, y - 150);
                 
-                // 移除烟花
                 setTimeout(() => {
                     firework.remove();
                 }, 400);
@@ -757,7 +732,6 @@
                 
                 document.body.appendChild(particle);
                 
-                // 粒子运动
                 const angle = Math.random() * Math.PI * 2;
                 const distance = 50 + Math.random() * 100;
                 const duration = 0.8 + Math.random() * 0.4;
@@ -768,14 +742,12 @@
                     particle.style.opacity = '0';
                 }, 10);
                 
-                // 移除粒子
                 setTimeout(() => {
                     particle.remove();
                 }, duration * 1000 + 100);
             }
         }
         
-        // 创建彩带效果
         function createRibbons() {
             const count = 12;
             
@@ -783,7 +755,6 @@
                 const ribbon = document.createElement('div');
                 ribbon.className = 'ribbon';
                 
-                // 随机位置
                 const x = Math.random() * window.innerWidth;
                 const width = 80 + Math.random() * 120;
                 const rotation = -45 + Math.random() * 90;
@@ -795,20 +766,17 @@
                 
                 document.body.appendChild(ribbon);
                 
-                // 下落动画
                 setTimeout(() => {
                     ribbon.style.transition = 'top 2s ease-in';
                     ribbon.style.top = `${window.innerHeight + 20}px`;
                 }, 10);
                 
-                // 移除彩带
                 setTimeout(() => {
                     ribbon.remove();
                 }, 2000);
             }
         }
         
-        // 创建气球
         function createBalloons(count = 15) {
             const colors = ['#ff9e9e', '#ffd0c4', '#ffb8b8', '#ff9a9e', '#fad0c4'];
             const body = document.body;
@@ -817,47 +785,38 @@
                 const balloon = document.createElement('div');
                 balloon.classList.add('balloon');
                 
-                // 随机大小
                 const size = Math.random() * 60 + 30;
                 balloon.style.width = `${size}px`;
                 balloon.style.height = `${size}px`;
                 
-                // 随机位置
                 balloon.style.left = `${Math.random() * 100}%`;
                 balloon.style.top = `${100 + Math.random() * 20}%`;
                 
-                // 随机颜色
                 balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 
-                // 随机动画延迟和时长
                 const delay = Math.random() * 5;
                 const duration = Math.random() * 10 + 10;
                 balloon.style.animation = `float ${duration}s ease-in-out ${delay}s forwards`;
                 
                 body.appendChild(balloon);
                 
-                // 移除气球
                 setTimeout(() => {
                     balloon.remove();
                 }, (duration + delay) * 1000);
             }
         }
         
-        // 主页面初始化
         function initMainPage() {
             createBalloons();
             
-            // 显示音乐提示
             const musicTip = document.getElementById('musicTip');
             musicTip.style.display = 'block';
             setTimeout(() => {
                 musicTip.style.display = 'none';
             }, 5000);
             
-            // 尝试自动播放音乐
             tryPlayMusic();
             
-            // 添加点击事件监听
             document.body.addEventListener('click', function enableMusic() {
                 if (!musicPlaying) {
                     tryPlayMusic();
@@ -865,82 +824,71 @@
             }, { once: true });
         }
         
-        // 音乐控制
         const musicControl = document.getElementById('musicControl');
         const bgMusic = document.getElementById('bgMusic');
         const musicLoading = document.getElementById('musicLoading');
         let musicPlaying = false;
         
-        // 检查音乐是否可播放
         function checkMusicPlayable() {
             return new Promise((resolve) => {
-bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐bg音乐.addEventListener('canplaythrough'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：true})；addEventListener('canplaythrough'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：true})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；addEventListener('可以通过播放'，()=>解决(正确)，{一次：正确})；
-bg音乐bg音乐.addEventListener('错误'，()=>解决(假的)，{一次:正确})；addEventListener('错误'，()=>解决(假的)，{一次:正确})；
+                bgMusic.addEventListener('canplaythrough', () => resolve(true), { once: true });
+                bgMusic.addEventListener('error', () => resolve(false), { once: true });
                 
-// 设置超时检查// 设置超时检查
-setTimeout(()setTimeout(()=>{{
-解决(bg音乐解决(bg音乐解决(bg音乐解决(bgMusic.readyState>=HTMLMediaElement.have_FUTURE_DATA)；readyState>=HTMLMediaElement.have_FUTURE_DATA)解决(bg音乐.readyState>=HTMLMediaElement。解决(bg音乐.readyState>=HTMLMediaElement.Have_FUTURE_DATA)；
-}}}}，3000);3000);3000);3000);
+                setTimeout(() => {
+                    resolve(bgMusic.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA);
+                }, 3000);
             });
         }
         
-// 尝试播放音乐
-异步功能tryPlayMusic()tryPlayMusic(){{
-音乐加载。 风格音乐加载。 风格.显示='块'；音乐加载。风格.显示='块'；显示='块'；音乐加载。风格.显示='块'；
+        async function tryPlayMusic() {
+            musicLoading.style.display = 'block';
             
-尝试{尝试{
-Constcanplay=等候checkMusicPlayable()；
+            try {
+                const canPlay = await checkMusicPlayable();
                 
-如果(canplay){
-ConstplayPromise=bg音乐.玩()；
+                if (canPlay) {
+                    const playPromise = bgMusic.play();
                     
-如果(playPromise！==未定义){
-等候playPromise；
-音乐演奏=正确;
-MusicControlMusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；
+                    if (playPromise !== undefined) {
+                        await playPromise;
+                        musicPlaying = true;
+                        musicControl.innerHTML = '<i class="fas fa-pause"></i>';
                     }
-}} 其他{其他{
-控制台控制台.日志('音乐加载失败，使用备用方案');日志('音乐加载失败，使用备用方案');
                 }
-}} 赶上 (误差) {赶上 (误差) {
-控制台控制台.日志('自动播放被阻止:', 误差);日志('自动播放被阻止:', 误差);
-Const音乐提示=文件.getElementById('音乐提示')；
-音乐提示音乐提示.风格.显示='块';风格.显示='块';
-setTimeout(()=>{
-音乐提示音乐提示.风格.显示='无';风格.显示='无';
-}}, 5000);5000);
-}} 最后{最后{
-音乐加载。风格音乐加载。风格.显示='无'；显示='无'；
+            } catch (error) {
+                console.log('自动播放被阻止:', error);
+                const musicTip = document.getElementById('musicTip');
+                musicTip.style.display = 'block';
+                setTimeout(() => {
+                    musicTip.style.display = 'none';
+                }, 5000);
+            } finally {
+                musicLoading.style.display = 'none';
             }
         }
         
-// 音乐控制点击事件
-MusicControlMusicControl.addEventListener('单击'，异步()=>{addEventListener('单击'，异步()=>{
-如果如果 (音乐演奏) {(音乐演奏) {
-bg音乐bg音乐.暂停()；暂停()；
-MusicControlMusicControlMusicControlMusicControl.innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；innerHTML='<i class="fas fa-music"></i>'；
-}其他{
-尝试{
-等候bg音乐等候bg音乐等候bg音乐等候bg音乐.玩()；玩()；玩()；玩()；
-MusicControlMusicControlMusicControlMusicControlMusicControlMusicControlMusicControlMusicControl.innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；innerHTML='<i class="fas fa-pause"></i>'；
-}赶上(错误){
-控制台控制台控制台控制台控制台控制台控制台控制台.日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；日志('播放失败：'，误差)；
-警惕的('音乐播放失败，请检查网络连接或刷新页面重试')；
-返回；
+        musicControl.addEventListener('click', async () => {
+            if (musicPlaying) {
+                bgMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-music"></i>';
+            } else {
+                try {
+                    await bgMusic.play();
+                    musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+                } catch (error) {
+                    console.log('播放失败:', error);
+                    alert('音乐播放失败，请检查网络连接或刷新页面重试');
+                    return;
                 }
             }
-音乐播放音乐播放音乐播放音乐播放=！ 音乐演奏；！ 音乐演奏；音乐演奏；！音乐演奏；！ 音乐演奏；！ 音乐演奏；音乐演奏；！ 音乐演奏；
+            musicPlaying = !musicPlaying;
         });
         
-// 预加载音效
-窗户窗户窗户窗户.onload=函数(){onload=函数(){onload=函数(){onload=函数(){onload=函数(){onload=函数(){onload=函数(){onload=函数(){
-// 预加载音效
-blowSoundblowSoundblowSoundblowSound。负载()；载荷()；负载()；负载()；
-庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音 庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音 庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音庆典声音.负载() ； 负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载() ；载荷() ； 负载()；负载()；负载()；负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载()；载荷()；负载()；负载()；负载()； 负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载()；载荷()；负载()；负载()；负载()；负载()；负载()；
-            
-// 创建开场气球
-createBalloons(8)；
+        window.onload = function() {
+            blowSound.load();
+            celebrationSound.load();
+            createBalloons(8);
         };
     </script>
 </body>
-</html>                                
+</html>
